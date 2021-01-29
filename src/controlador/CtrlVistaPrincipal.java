@@ -7,6 +7,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import vista.VistaOperaciones;
 import vista.VistaPrincipal;
 
@@ -15,19 +16,20 @@ import vista.VistaPrincipal;
  * @author Iván Aguilar
  */
 public class CtrlVistaPrincipal implements ActionListener {
+
     private VistaPrincipal vp;
     private VistaOperaciones vo;
 
     public CtrlVistaPrincipal(VistaPrincipal vp) {
         this.vp = vp;
-        
+
         vp.getjButtonCerrar().addActionListener(this);
         vp.getjComboBoxOperaciones().addActionListener(this);
     }
-   
+
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if(vp.getjButtonCerrar() == ae.getSource()){
+        if (vp.getjButtonCerrar() == ae.getSource()) {
             System.exit(0);
         }
         if (vp.getjComboBoxOperaciones().getSelectedItem().equals("Suma de matrices")) {
@@ -71,5 +73,5 @@ public class CtrlVistaPrincipal implements ActionListener {
             CtrlVistaOperaciones cvo = new CtrlVistaOperaciones(vo, vp);
             vo.setVisible(true);
         }
-    }  
+    }
 }

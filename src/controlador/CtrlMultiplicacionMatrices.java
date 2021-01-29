@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import modelo.MultiplicacionMatrices;
 import vista.VistaOperaciones;
@@ -20,6 +21,7 @@ import vista.VistaOperaciones;
  * @author Iván Aguilar
  */
 public final class CtrlMultiplicacionMatrices implements ActionListener {
+
     private VistaOperaciones vo;
     private List<JTextField> valoresDeMatrizA, valoresDeMatrizB;
     private int filasA, columnasA, filasB, columnasB;
@@ -28,7 +30,7 @@ public final class CtrlMultiplicacionMatrices implements ActionListener {
         this.vo = vo;
         valoresDeMatrizA = new ArrayList<>();
         valoresDeMatrizB = new ArrayList<>();
-        
+
         adaptarDiseñoDeVista();
 
         vo.getjButtonRegresar().addActionListener(this);
@@ -38,57 +40,62 @@ public final class CtrlMultiplicacionMatrices implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if(vo.getjButtonGenerarMatrices() == ae.getSource()) {
+        if (vo.getjButtonGenerarMatrices() == ae.getSource()) {
             generarMatrices();
         }
-        if(vo.getjButtonResolver() == ae.getSource()) {
-            imprimirResultado(resolverMultiplicacion());
-        }  
-        if(vo.getjButtonRegresar() == ae.getSource()) {
+        if (vo.getjButtonResolver() == ae.getSource()) {
+            try {
+                imprimirResultado(resolverMultiplicacion());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "HUBO UN ERROR, VERIFIQUE QUE HAYA LLENADO TODO EL FORMULARIO, \n"
+                        + "RECUERDA IGUAL QUE SOLO SE ADMITEN VALORES NUMERICOS.", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        if (vo.getjButtonRegresar() == ae.getSource()) {
             vo.setVisible(false);
         }
     }
-    
+
     public void adaptarDiseñoDeVista() {
         vo.getjLabelTituloVista().setText("MULTIPLICACIÓN DE MATRICES");
         vo.getFilasMatrizB().setVisible(false);
     }
-    
-    public void generarMatrices() {  
+
+    public void generarMatrices() {
         limpiarMatrices();
         obtenerValoresFilasColumnas();
-        
-        vo.getPanelMatrizA().setLayout( new GridLayout(filasA, columnasA) );  
-        vo.getPanelMatrizB().setLayout( new GridLayout(filasB, columnasB) );
-        
+
+        vo.getPanelMatrizA().setLayout(new GridLayout(filasA, columnasA));
+        vo.getPanelMatrizB().setLayout(new GridLayout(filasB, columnasB));
+
         int totalDeValoresA = filasA * columnasA;
         for (int i = 0; i < totalDeValoresA; i++) {
             JTextField valorMatrizA = new JTextField("valorMatrizA" + i);
-            valorMatrizA.setPreferredSize( new Dimension( 35, 35 ) );
+            valorMatrizA.setPreferredSize(new Dimension(35, 35));
             valorMatrizA.setText("");
             vo.getPanelMatrizA().add(valorMatrizA);
             valoresDeMatrizA.add(valorMatrizA);
             vo.getPanelMatrizA().updateUI();
         }
-        
+
         int totalDeValoresB = filasB * columnasB;
         for (int i = 0; i < totalDeValoresB; i++) {
             JTextField valorMatrizB = new JTextField("valorMatrizB" + i);
-            valorMatrizB.setPreferredSize( new Dimension( 35, 35 ) );
+            valorMatrizB.setPreferredSize(new Dimension(35, 35));
             valorMatrizB.setText("");
             vo.getPanelMatrizB().add(valorMatrizB);
             valoresDeMatrizB.add(valorMatrizB);
             vo.getPanelMatrizB().updateUI();
-        }    
+        }
     }
-    
+
     public void limpiarMatrices() {
         vo.getPanelMatrizA().removeAll();
         valoresDeMatrizA.clear();
         vo.getPanelMatrizB().removeAll();
         valoresDeMatrizB.clear();
     }
-    
+
     public void obtenerValoresFilasColumnas() {
         filasA = 1;
         columnasA = 1;
@@ -102,7 +109,7 @@ public final class CtrlMultiplicacionMatrices implements ActionListener {
         } catch (NumberFormatException e) {
         }
     }
-    
+
     public void imprimirResultado(int[][] matrizResultante) {
         vo.getjTextAreaResultado().setText("");
         String resultado = "";
@@ -114,31 +121,31 @@ public final class CtrlMultiplicacionMatrices implements ActionListener {
         }
         vo.getjTextAreaResultado().setText(resultado);
     }
-    
-    public int[][] resolverMultiplicacion() {     
+
+    public int[][] resolverMultiplicacion() {
         int[][] matrizA = new int[filasA][columnasA];
         int i = 0, j = 0;
         for (JTextField valorMatrizA : valoresDeMatrizA) {
-            if(j == columnasA){
+            if (j == columnasA) {
                 i++;
                 j = 0;
             }
             matrizA[i][j] = Integer.parseInt(valorMatrizA.getText());
-            j++; 
-        }  
-        
+            j++;
+        }
+
         int[][] matrizB = new int[filasB][columnasB];
-        i = 0; 
+        i = 0;
         j = 0;
         for (JTextField valorMatrizB : valoresDeMatrizB) {
-            if(j == columnasB){
+            if (j == columnasB) {
                 i++;
                 j = 0;
             }
             matrizB[i][j] = Integer.parseInt(valorMatrizB.getText());
-            j++; 
+            j++;
         }
-        
+
         int[][] matrizResultante;
         MultiplicacionMatrices multiplicacion = new MultiplicacionMatrices();
         matrizResultante = multiplicacion.multiplicarMatriz(matrizA, matrizB);

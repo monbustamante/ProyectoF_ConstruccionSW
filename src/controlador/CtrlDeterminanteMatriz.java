@@ -43,7 +43,12 @@ public class CtrlDeterminanteMatriz implements ActionListener {
             generarMatrices();
         } 
         if(vo.getjButtonResolver() == ae.getSource()) {
-            imprimirResultado(resolverDeterminante());
+            try {
+                imprimirResultado(resolverDeterminante());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "HUBO UN ERROR, VERIFIQUE QUE HAYA LLENADO TODO EL FORMULARIO, \n"
+                        + "RECUERDA IGUAL QUE SOLO SE ADMITEN VALORES NUMERICOS.", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
         }
         if(vo.getjButtonRegresar() == ae.getSource()) {
             vo.setVisible(false);

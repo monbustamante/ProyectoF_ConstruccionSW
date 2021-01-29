@@ -21,34 +21,40 @@ import vista.VistaOperaciones;
  * @author Iván Aguilar
  */
 public final class CtrlSistemaEcuaciones implements ActionListener {
+
     private VistaOperaciones vo;
     private List<JTextField> valoresDeMatrizA;
     private int filas, columnas;
 
     public CtrlSistemaEcuaciones(VistaOperaciones vo) {
-        this.vo = vo;  
+        this.vo = vo;
         valoresDeMatrizA = new ArrayList<>();
-        
+
         adaptarDiseñoDeVista();
 
         vo.getjButtonRegresar().addActionListener(this);
         vo.getjButtonResolver().addActionListener(this);
         vo.getjButtonGenerarMatrices().addActionListener(this);
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if(vo.getjButtonGenerarMatrices() == ae.getSource()) {
+        if (vo.getjButtonGenerarMatrices() == ae.getSource()) {
             generarMatrices();
         }
-        if(vo.getjButtonResolver() == ae.getSource()) {
-            imprimirResultado(resolverSistema());
+        if (vo.getjButtonResolver() == ae.getSource()) {
+            try {
+                imprimirResultado(resolverSistema());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "HUBO UN ERROR, VERIFIQUE QUE HAYA LLENADO TODO EL FORMULARIO, \n"
+                        + "RECUERDA IGUAL QUE SOLO SE ADMITEN VALORES NUMERICOS.", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
         }
-        if(vo.getjButtonRegresar() == ae.getSource()) {
+        if (vo.getjButtonRegresar() == ae.getSource()) {
             vo.setVisible(false);
         }
     }
-    
+
     public void adaptarDiseñoDeVista() {
         vo.getjLabelTituloVista().setText("SISTEMA DE ECUACIONES (GAUSS-JORDAN)");
         vo.getColumnasMatrizA().setVisible(false);
@@ -56,29 +62,29 @@ public final class CtrlSistemaEcuaciones implements ActionListener {
         vo.getFilasMatrizB().setVisible(false);
         vo.getjLabeMatrizB().setText("");
     }
-    
-    public void generarMatrices() {  
+
+    public void generarMatrices() {
         limpiarMatrices();
         obtenerValoresFilasColumnas();
-        
-        vo.getPanelMatrizA().setLayout( new GridLayout(filas, columnas) ); 
-        
+
+        vo.getPanelMatrizA().setLayout(new GridLayout(filas, columnas));
+
         int totalDeValores = filas * columnas;
         for (int i = 0; i < totalDeValores; i++) {
             JTextField valorMatrizA = new JTextField("valorMatrizA" + i);
-            valorMatrizA.setPreferredSize( new Dimension( 35, 35 ) );
+            valorMatrizA.setPreferredSize(new Dimension(35, 35));
             valorMatrizA.setText("");
             vo.getPanelMatrizA().add(valorMatrizA);
             valoresDeMatrizA.add(valorMatrizA);
             vo.getPanelMatrizA().updateUI();
         }
     }
-    
+
     public void limpiarMatrices() {
         vo.getPanelMatrizA().removeAll();
         valoresDeMatrizA.clear();
     }
-    
+
     public void obtenerValoresFilasColumnas() {
         filas = 1;
         columnas = 1;
@@ -88,28 +94,28 @@ public final class CtrlSistemaEcuaciones implements ActionListener {
         } catch (NumberFormatException e) {
         }
     }
-    
+
     public void imprimirResultado(String valorDeVariables) {
         JOptionPane.showMessageDialog(vo, valorDeVariables);
         vo.getjTextAreaResultado().setText(valorDeVariables);
     }
-    
+
     public String resolverSistema() {
         float[][] matrizA = new float[filas][columnas];
         int i = 0, j = 0;
         for (JTextField valorMatrizA : valoresDeMatrizA) {
-            if(j == columnas){
+            if (j == columnas) {
                 i++;
                 j = 0;
             }
             matrizA[i][j] = Integer.parseInt(valorMatrizA.getText());
-            j++; 
-        } 
-        
+            j++;
+        }
+
         String valorDeVariables;
         int numeroDeVariables = filas;
         SistemaEcuaciones sistema = new SistemaEcuaciones();
         valorDeVariables = sistema.resolverSistema(matrizA, numeroDeVariables);
         return valorDeVariables;
-    }  
+    }
 }
