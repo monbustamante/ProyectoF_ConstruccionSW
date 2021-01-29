@@ -31,13 +31,21 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelTitulo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabelTitulo1 = new javax.swing.JLabel();
         jComboBoxOperaciones = new javax.swing.JComboBox<>();
         jButtonCerrar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         jLabelTitulo.setFont(new java.awt.Font("Malayalam MN", 2, 24)); // NOI18N
         jLabelTitulo.setText("Calculadora de Matrices");
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\monts\\Downloads\\matrix.png")); // NOI18N
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(540, 310));
@@ -45,29 +53,57 @@ public class VistaPrincipal extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(540, 310));
         getContentPane().setLayout(null);
 
-        jLabelTitulo1.setFont(new java.awt.Font("Malayalam MN", 2, 24)); // NOI18N
+        jLabelTitulo1.setFont(new java.awt.Font("Sneakerhead BTN Shadow", 2, 24)); // NOI18N
+        jLabelTitulo1.setForeground(new java.awt.Color(102, 102, 255));
         jLabelTitulo1.setText("Calculadora de Matrices");
         getContentPane().add(jLabelTitulo1);
-        jLabelTitulo1.setBounds(130, 80, 258, 32);
+        jLabelTitulo1.setBounds(110, 60, 320, 29);
 
-        jComboBoxOperaciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona una operación", "Suma de matrices", "Multiplicación por un escalar", "Multiplicación de matrices", "Obtención de la transpuesta de una matriz", "Obtención de la inversa de una matriz (Gauss)", "Sistema de ecuaciones por Gauss-Jordan", "Encontrar la determinante de una matriz " }));
+        jComboBoxOperaciones.setBackground(new java.awt.Color(153, 153, 255));
+        jComboBoxOperaciones.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBoxOperaciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona una opción...", "Suma de matrices", "Multiplicación de matriz por escalar", "Multiplicación de matrices", "Obtención de la transpuesta de una matriz --quitar-", "Obtención de la inversa de una matriz (Gauss)", "Sistema de ecuaciones por Gauss-Jordan", "Determinante de una matriz ", "Sistema de ecuaciones por Cramer" }));
         jComboBoxOperaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxOperacionesActionPerformed(evt);
             }
         });
         getContentPane().add(jComboBoxOperaciones);
-        jComboBoxOperaciones.setBounds(110, 160, 310, 20);
+        jComboBoxOperaciones.setBounds(110, 140, 310, 20);
 
         jButtonCerrar.setBackground(new java.awt.Color(255, 102, 102));
         jButtonCerrar.setText("Cerrar");
         getContentPane().add(jButtonCerrar);
         jButtonCerrar.setBounds(220, 230, 73, 23);
+        getContentPane().add(jSeparator1);
+        jSeparator1.setBounds(10, 90, 520, 10);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/white-wood-texture-abstract-16498.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 540, 310);
+        jLabel2.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 14)); // NOI18N
+        jLabel2.setText("Construcción del software");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(150, 40, 240, 17);
+
+        jInternalFrame1.setClosable(true);
+        jInternalFrame1.setIconifiable(true);
+        jInternalFrame1.setMaximizable(true);
+        jInternalFrame1.setResizable(true);
+        jInternalFrame1.setTitle("Calculadora de Matrices");
+        jInternalFrame1.setVisible(true);
+        getContentPane().add(jInternalFrame1);
+        jInternalFrame1.setBounds(0, 0, 540, 33);
+        try {
+            jInternalFrame1.setIcon(true);
+        } catch (java.beans.PropertyVetoException e1) {
+            e1.printStackTrace();
+        }
+
+        jLabel3.setText("Seleccione la operación que desea realizar");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(110, 120, 260, 14);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
+        jLabel4.setText("Equipo: Jafet Alejandro Fernández Martínez, Víctor Enrique Cauich Dávalos y Montserrat Bustamante Rentería");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(60, 300, 430, 11);
 
         setSize(new java.awt.Dimension(540, 310));
         setLocationRelativeTo(null);
@@ -131,8 +167,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCerrar;
     private javax.swing.JComboBox<String> jComboBoxOperaciones;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JLabel jLabelTitulo1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
