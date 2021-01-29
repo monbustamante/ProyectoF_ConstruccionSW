@@ -8,7 +8,7 @@ package modelo;
 /**
  * Esta clase realiza la suma de dos matrices
  * @version 1.2
- * @author Montserrat Bustamante Rentería
+ * @author pon tu nombre aqui
  */
 public class SumaMatrices {
 
