@@ -50,7 +50,7 @@ public final class CtrlSumaMatrices implements ActionListener {
     }
     
     public void adaptarDiseñoDeVista() {
-        vo.getjLabelTituloVista().setText("SUMA");
+        vo.getjLabelTituloVista().setText("SUMA DE MATRICES");
         vo.getColumnasMatrizB().setVisible(false);
         vo.getFilasMatrizB().setVisible(false);
     }

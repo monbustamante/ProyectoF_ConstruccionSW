@@ -44,7 +44,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabelTitulo.setFont(new java.awt.Font("Malayalam MN", 2, 24)); // NOI18N
         jLabelTitulo.setText("Calculadora de Matrices");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\monts\\Downloads\\matrix.png")); // NOI18N
         jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,11 +56,21 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabelTitulo1.setForeground(new java.awt.Color(102, 102, 255));
         jLabelTitulo1.setText("Calculadora de Matrices");
         getContentPane().add(jLabelTitulo1);
-        jLabelTitulo1.setBounds(110, 60, 320, 29);
+        jLabelTitulo1.setBounds(110, 60, 320, 32);
 
         jComboBoxOperaciones.setBackground(new java.awt.Color(153, 153, 255));
         jComboBoxOperaciones.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxOperaciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona una opción...", "Suma de matrices", "Multiplicación de matriz por escalar", "Multiplicación de matrices", "Obtención de la transpuesta de una matriz --quitar-", "Obtención de la inversa de una matriz (Gauss)", "Sistema de ecuaciones por Gauss-Jordan", "Determinante de una matriz ", "Sistema de ecuaciones por Cramer" }));
+        jComboBoxOperaciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona una opción...", "Suma de matrices", "Multiplicación de matriz por escalar", "Multiplicación de matrices", "Obtención de la inversa de una matriz (Gauss)", "Sistema de ecuaciones por Gauss-Jordan", "Determinante de una matriz", "Sistema de ecuaciones por Cramer" }));
+        jComboBoxOperaciones.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                jComboBoxOperacionesComponentAdded(evt);
+            }
+        });
+        jComboBoxOperaciones.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                jComboBoxOperacionesComponentHidden(evt);
+            }
+        });
         jComboBoxOperaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxOperacionesActionPerformed(evt);
@@ -89,7 +98,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jInternalFrame1.setTitle("Calculadora de Matrices");
         jInternalFrame1.setVisible(true);
         getContentPane().add(jInternalFrame1);
-        jInternalFrame1.setBounds(0, 0, 540, 33);
+        jInternalFrame1.setBounds(0, 0, 540, 34);
         try {
             jInternalFrame1.setIcon(true);
         } catch (java.beans.PropertyVetoException e1) {
@@ -112,6 +121,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private void jComboBoxOperacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxOperacionesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxOperacionesActionPerformed
+
+    private void jComboBoxOperacionesComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jComboBoxOperacionesComponentAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxOperacionesComponentAdded
+
+    private void jComboBoxOperacionesComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jComboBoxOperacionesComponentHidden
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxOperacionesComponentHidden
 
     /**
      * @param args the command line arguments

@@ -1,9 +1,11 @@
+package controlador;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controlador;
+
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -49,7 +51,7 @@ public final class CtrlInversaMatrizGauss implements ActionListener {
     }
     
     public void adaptarDiseñoDeVista() {
-        vo.getjLabelTituloVista().setText("INVERSA DE UNA MATRIZ");
+        vo.getjLabelTituloVista().setText("INVERSA DE UNA MATRIZ (GAUSS-JORDAN)");
         vo.getColumnasMatrizA().setVisible(false);
         vo.getColumnasMatrizB().setVisible(false);
         vo.getFilasMatrizB().setVisible(false);

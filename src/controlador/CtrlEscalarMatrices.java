@@ -51,7 +51,7 @@ public final class CtrlEscalarMatrices implements ActionListener {
     }
     
     public void adaptarDiseñoDeVista() {
-        vo.getjLabelTituloVista().setText("MULTIPLICACIÓN POR ESCALAR");
+        vo.getjLabelTituloVista().setText("MULTIPLICACIÓN DE UNA MATRIZ POR ESCALAR");
         vo.getColumnasMatrizB().setVisible(false);
         vo.getFilasMatrizB().setVisible(false);
         vo.getjLabeMatrizB().setText("Escalar");
