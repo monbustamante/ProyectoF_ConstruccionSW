@@ -37,7 +37,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jButtonCerrar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -90,20 +89,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabel2.setText("Construcción del software");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(150, 40, 240, 17);
-
-        jInternalFrame1.setClosable(true);
-        jInternalFrame1.setIconifiable(true);
-        jInternalFrame1.setMaximizable(true);
-        jInternalFrame1.setResizable(true);
-        jInternalFrame1.setTitle("Calculadora de Matrices");
-        jInternalFrame1.setVisible(true);
-        getContentPane().add(jInternalFrame1);
-        jInternalFrame1.setBounds(0, 0, 540, 34);
-        try {
-            jInternalFrame1.setIcon(true);
-        } catch (java.beans.PropertyVetoException e1) {
-            e1.printStackTrace();
-        }
 
         jLabel3.setText("Seleccione la operación que desea realizar");
         getContentPane().add(jLabel3);
@@ -184,7 +169,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCerrar;
     private javax.swing.JComboBox<String> jComboBoxOperaciones;
-    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
