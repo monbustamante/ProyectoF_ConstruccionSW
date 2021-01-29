@@ -55,6 +55,11 @@ public class VistaOperaciones extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButtonRegresar.setText("Regresar");
+        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegresarActionPerformed(evt);
+            }
+        });
 
         filasMatrizA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Filas", "1", "2", "3", "4" }));
         filasMatrizA.addActionListener(new java.awt.event.ActionListener() {
@@ -231,6 +236,10 @@ public class VistaOperaciones extends javax.swing.JFrame {
     private void jButtonResolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResolverActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonResolverActionPerformed
+
+    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonRegresarActionPerformed
 
     /**
      * @param args the command line arguments
