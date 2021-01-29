@@ -6,8 +6,9 @@
 package modelo;
 
 /**
- *
- * @author Iván Aguilar
+ * Esta clase resuelve un sistema de ecuaciones utilizando el método Gauss-Jordan
+ * @version 1.2
+ * @author Montserrat Bustamante Rentería
  */
 public class SistemaEcuaciones {
 
