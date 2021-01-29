@@ -50,7 +50,7 @@ public final class CtrlMultiplicacionMatrices implements ActionListener {
     }
     
     public void adaptarDiseñoDeVista() {
-        vo.getjLabelTituloVista().setText("MULTIPLICACIÓN");
+        vo.getjLabelTituloVista().setText("MULTIPLICACIÓN DE MATRICES");
         vo.getFilasMatrizB().setVisible(false);
     }
     

@@ -50,7 +50,7 @@ public final class CtrlSistemaEcuaciones implements ActionListener {
     }
     
     public void adaptarDiseñoDeVista() {
-        vo.getjLabelTituloVista().setText("SISTEMA DE ECUACIONES");
+        vo.getjLabelTituloVista().setText("SISTEMA DE ECUACIONES (GAUSS-JORDAN)");
         vo.getColumnasMatrizA().setVisible(false);
         vo.getColumnasMatrizB().setVisible(false);
         vo.getFilasMatrizB().setVisible(false);
