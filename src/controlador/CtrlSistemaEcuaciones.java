@@ -96,7 +96,9 @@ public final class CtrlSistemaEcuaciones implements ActionListener {
     }
 
     public void imprimirResultado(String valorDeVariables) {
-        JOptionPane.showMessageDialog(vo, valorDeVariables);
+        if(valorDeVariables != ""){
+            JOptionPane.showMessageDialog(vo, valorDeVariables);
+        }
         vo.getjTextAreaResultado().setText(valorDeVariables);
     }
 
