@@ -6,27 +6,26 @@
 package modelo;
 
 /**
- *
- * @author Iván Aguilar
+ * Esta clase realiza la suma de dos matrices
+ * @version 1.2
+ * @author Montserrat Bustamante Rentería
  */
 public class SumaMatrices {
 
     public int[][] sumarMatriz(int[][] matrizA , int[][] matrizB) {
         int[][] matrizResultado;
-        int filasA = matrizA.length;
-        int columnasA = matrizA[0].length;
+        int numFilasA = matrizA.length;
+        int numColumnasA = matrizA[0].length;
 
         int filasB = matrizB.length;
         int columnasB = matrizB[0].length;
 
-//        imprimeMatriz("Primera matriz:", matrizA);
-//        imprimeMatriz("Segunda matriz:", matrizB);
         
-        if (filasA==filasB && columnasB==columnasA) {
+        if (numFilasA==filasB && columnasB==numColumnasA) {
 
-            matrizResultado = new int[filasA][columnasA];
-            for (int i = 0; i < filasA; i++) {
-                for (int j = 0; j < columnasA; j++) {
+            matrizResultado = new int[numFilasA][numColumnasA];
+            for (int i = 0; i < numFilasA; i++) {
+                for (int j = 0; j < numColumnasA; j++) {
                     matrizResultado[i][j] = matrizA[i][j] + matrizB[i][j];
                 }
             }
