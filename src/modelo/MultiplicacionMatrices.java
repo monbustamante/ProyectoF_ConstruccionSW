@@ -7,11 +7,19 @@
 package modelo;
 
 /**
- *
- * @author Iván Aguilar
+ * Esta clase realiza la multiplicación de dos matrices: A de dimensiones mxn y B de dimensiones nxp
+ * @version 1.2
+ * @author 
  */
 public class MultiplicacionMatrices {
 
+    /*
+     * Realiza la multiplicación de las dos matrices
+     * El número de filas de la segunda matriz debe ser igual al número de columnas de la primera matriz.
+     * @param matrizA Matriz de números enteros.
+     * @param matrizB Matriz de números enteros.
+     * @return matrizResultado Resultado dem la multiplicación de ambas matrices.
+    */
     public int[][] multiplicarMatriz(int[][] matrizA, int[][] matrizB) { 
         int filasA = matrizA.length;
         int columnasB = matrizB[0].length;  

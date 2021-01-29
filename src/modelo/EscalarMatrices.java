@@ -6,30 +6,40 @@
 package modelo;
 
 /**
- *
- * @author Iván Aguilar
+ * Esta clase contiene todos los métodos para realizar la multiplicación de una matriz por un escalar.
+ * @version 1.2
+ * @author Montserrat Bustamante Rentería
  */
 public class EscalarMatrices {
     
-    public int[][] escalarMatriz(int[][] matrizA , int escalar) {
+    /*
+     * Realiza la multiplicación de una matriz por un escalar. 
+     * Toma la matriz del parámetro y multiplica cada uno de sus elementos por el escalar.
+     * @param matriz Una matriz de números enteros.
+     * @param escalar Un número entero.
+     * @return matrizResultado Matriz de números enteros resultado de matriz * escalar
+    */
+    public int[][] escalarMatriz(int[][] matriz , int escalar) {
         int[][] matrizResultado;
-        int filasA = matrizA.length;
-        int columnasA = matrizA[0].length;
-
-//        imprimeMatriz("Primera matriz:", matrizA);
+        int numFilas = matriz.length;
+        int numColumnas = matriz[0].length;
         
-        matrizResultado = new int[filasA][columnasA];
-        for (int i = 0; i < filasA; i++) {
-            for (int j = 0; j < columnasA; j++) {
-                matrizResultado[i][j] = matrizA[i][j] * escalar;
+        matrizResultado = new int[numFilas][numColumnas];
+        // Llena matrizResultado con el resultado de la multiplicacion de cada elemento de la matriz original por el escalar.
+        for (int i = 0; i < numFilas; i++) {
+            for (int j = 0; j < numColumnas; j++) {
+                matrizResultado[i][j] = matriz[i][j] * escalar;
             }
         }
-        
-//        imprimeMatriz("Matriz resultado:", matrizResultado);
         
         return matrizResultado;
     }
 
+    /*
+     * Este método imprime la matriz resultante de la multiplicación de matriz por escalar
+     * @param matrizTittle 
+     * @param matriz Matriz resultante de la multiplicación
+    */
     private void imprimeMatriz (String matrizTittle, int[][] matriz){
         int filas = matriz.length;
         int columnas = matriz[0].length;
