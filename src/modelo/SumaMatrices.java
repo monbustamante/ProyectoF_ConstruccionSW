@@ -11,12 +11,7 @@ package modelo;
  * @author pon tu nombre aqui
  */
 public class SumaMatrices {
-    /*
-     * Este método toma dos matrices ingresadas por el usuario y las suma
-     * @param matrizA Una matriz de tipo entero
-     * @param matrizB Una matriz de tipo entero
-     * @return matrizResultado Una matriz de tipo entero
-    */
+
     public int[][] sumarMatriz(int[][] matrizA , int[][] matrizB) {
         int[][] matrizResultado;
         int numFilasA = matrizA.length;
@@ -38,16 +33,12 @@ public class SumaMatrices {
         } else {
             throw new Error("Las matrices deben tener la misma cantidad de filas que columnas");
         }
-      
+        
+//        imprimeMatriz("Matriz resultado:", matrizResultado);
         
         return matrizResultado;
     }
     
-    /*
-     * Este método imprime la matriz resultante de la suma de ambas matrices
-     * @param matrizTittle Un string
-     * @param matriz La matriz de enteros resultante de la suma
-    */
     private void imprimeMatriz (String matrizTittle, int[][] matriz){
         int filas = matriz.length;
         int columnas = matriz[0].length;

@@ -6,15 +6,11 @@
 package modelo;
 
 /**
- * Esta clase calcula la determinante de una matriz
- * @author 
+ *
+ * @author Iván Aguilar
  */
 public class DeterminanteMatriz {
-    /*
-     * Este método realiza el cálculo de la determinante de la matriz
-     * @param matriz Matriz de números de tipo double
-     * @return determinante Número de tipo double
-    */
+
     public double Determinante(double[][] matriz){
         double determinante = 0;        
         

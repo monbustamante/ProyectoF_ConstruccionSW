@@ -8,14 +8,11 @@ package modelo;
 
 
 /**
- * Esta clase calcula la inversa de una matriz de dimensiones nxn con el método Gauss-Jordan
- * @version 1.2
- * @author 
+ *
+ * @author Iván Aguilar
  */
 public class InversaMatrizGauss {
-    /*
     
-    */
     public double[][] obtenerInversa(double matriz[][]) {
         
         int dimensionMatriz = matriz.length;
@@ -37,7 +34,7 @@ public class InversaMatrizGauss {
     
     public static void gaussJordan(double matriz[][], int ordenPivote[]){
         int largoPivote = ordenPivote.length;
-        double factorEscala[] = new double[largoPivote];
+        double factorEscala[] = new double[largoPivote]; //Organiza el código de manera que las dependencias entre sentencias sean obvias
  
 
         for (int i=0; i<largoPivote; ++i) { 

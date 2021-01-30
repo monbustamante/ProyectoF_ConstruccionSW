@@ -13,7 +13,7 @@ import javax.swing.JTextArea;
 
 /**
  *
- * @author 
+ * @author Iván Aguilar
  */
 public class VistaOperaciones extends javax.swing.JFrame {
 
