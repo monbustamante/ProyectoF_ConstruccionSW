@@ -17,8 +17,8 @@ import modelo.DeterminanteMatriz;
 import vista.VistaOperaciones;
 
 /**
- *
- * @author Iván Aguilar
+ * Clase controladora de DeterminanteMatriz
+ * @author 
  */
 public class CtrlDeterminanteMatriz implements ActionListener {
     private VistaOperaciones vo;

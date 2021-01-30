@@ -17,8 +17,8 @@ import modelo.EscalarMatrices;
 import vista.VistaOperaciones;
 
 /**
- *
- * @author Iván Aguilar
+ * Clase controladora de EscalarMatrices
+ * @author Montserrat Bustamante Rentería
  */
 public final class CtrlEscalarMatrices implements ActionListener {
 
